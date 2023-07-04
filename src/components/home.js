@@ -1,13 +1,16 @@
 import React from 'react';
-import { UserContext } from '../App';
+import Card from './card';
+import bankImg from '../assets/bank.png';
 
 function Home() {
-  const ctx = React.useContext(UserContext);
-  
   return (
-    <h1> Home <br/>
-      {JSON.stringify(ctx)}
-    </h1>
+    <Card 
+      txtcolor="black"
+      header="BadBank Landing Page"
+      title="Welcome to the Bank"
+      text="Here for all your financial needs"
+      body={(<img src={bankImg} className="img-fluid" alt="Responsive image"/>)}
+    />
   );
 }
 
