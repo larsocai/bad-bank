@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-
-const Deposit = ({ balance, setBalance }) => {
+const Deposit = () => {
   const [deposit, setDeposit] = useState(0);
   const [validTransaction, setValidTransaction] = useState(false);
+
   const handleChange = (event) => {
     const amount = Number(event.target.value);
     if (amount <= 0) {
@@ -13,25 +13,53 @@ const Deposit = ({ balance, setBalance }) => {
       setDeposit(amount);
     }
   };
-
   const handleSubmit = (event) => {
+    event.preventDefault();
+    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
+    const users = JSON.parse(localStorage.getItem("users"));
+    const balance = currentUser.balance;
     const newTotal = balance + deposit;
-    setBalance(newTotal);
+    // Update the current user balance
+    currentUser.balance = newTotal;
+
+    // Update the balance in the users array
+    const updatedUsers = users.map((user) => {
+      if (user.username === currentUser.username) {
+        user.balance = newTotal;
+      }
+      return user;
+    });
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
     setValidTransaction(false);
     event.target.reset(); // Clear the form input
-    event.preventDefault();
   };
 
-  let status = `Account Balance $ ${balance} `;
+  let status = `Account Balance $ ${
+    JSON.parse(localStorage.getItem("currentUser")).balance
+  } `;
 
   return (
     <form onSubmit={handleSubmit}>
-    <h2 id="total">{status}</h2>
-    <label className="label huge">
-      <h3>Deposit</h3>
-      <input id="number-input" type="number" width="200" onChange={handleChange} /><br /><br />
-      <input type="submit" disabled={!validTransaction} width="200" value="Confirm" id="submit-input" />
-    </label>
+      <h2 id="total">{status}</h2>
+      <label className="label huge">
+        <h3>Deposit</h3>
+        <input
+          id="number-input"
+          type="number"
+          width="200"
+          onChange={handleChange}
+        />
+        <br />
+        <br />
+        <input
+          type="submit"
+          disabled={!validTransaction}
+          width="200"
+          value="Confirm"
+          id="submit-input"
+        />
+      </label>
     </form>
   );
 };
