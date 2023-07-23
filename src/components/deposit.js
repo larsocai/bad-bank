@@ -39,7 +39,7 @@ const Deposit = () => {
     event.target.reset(); // Clear the form input
   };
 
-  let status = `Account Balance $ ${
+  let status = `Balance: $${
     JSON.parse(localStorage.getItem("currentUser")).balance
   } `;
 
@@ -55,31 +55,32 @@ const Deposit = () => {
           <Card
             txtcolor="black"
             header="Deposit"
-            title="No security, no service, no hassel."
-            text="Sign in to manage your account."
+            // title="No security, no service, no hassel."
+            // text="Sign in to manage your account."
             body={
               <div>
                 <form onSubmit={handleSubmit}>
                   <h2 id="total">{status}</h2>
                   <label className="label huge">
-                    <h3>Deposit</h3>
-                    <input
-                      value={deposit}
-                      id="number-input"
-                      type="number"
-                      width="200"
-                      onChange={handleChange}
-                    />
-                    <br />
-                    <br />
-                    <input
-                      type="submit"
-                      disabled={!validTransaction}
-                      width="200"
-                      value="Confirm"
-                      id="submit-input"
-                    />
+                    Deposit Amount <br />
                   </label>
+                  <input
+                    value={deposit}
+                    id="number-input"
+                    className="form-control"
+                    type="number"
+                    width="200"
+                    onChange={handleChange}
+                  />
+                  <br />
+                  <input
+                    type="submit"
+                    disabled={!validTransaction}
+                    width="200"
+                    value="Confirm"
+                    id="submit-input"
+                    className="btn btn-light"
+                  />
                 </form>
                 {success && <p>Success!</p>}
               </div>

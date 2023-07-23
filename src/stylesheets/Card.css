@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ysabeau+SC:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap');
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -14,22 +16,33 @@
 }
 
 .card-header {
-    background-color: lightblue;
+    background-color:seagreen;
     border-bottom: 1px solid #959fa8;
-    
+    font-family: 'Ysabeau SC', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
     text-align: center;
 }
 
 .card-body {
-    
+    text-align: center;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 
 .card-title {
     text-align: center;
+    font-family: 'Rubik Mono One', sans-serif;
+    padding-top: 10px;
 }
 
 .card-text {
     text-align: center;
+    font-size: 14px;
+}
+
+.btn {
+    margin: 10px;
+    padding: 5px 20px;
+    font-family: 'Ysabeau SC', sans-serif;
 }

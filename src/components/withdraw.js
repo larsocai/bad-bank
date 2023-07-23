@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import "../App.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Withdraw = () => {
   const [withdrawAmount, setWithdrawAmount] = useState(0);
@@ -59,27 +60,30 @@ const Withdraw = () => {
         <Card
           txtcolor="black"
           header="Withdrawal"
-          title="No security, no service, no hassel."
-          text="Sign in to manage your account."
+          // title="No security, no service, no hassel."
+          // text="Sign in to manage your account."
           body={
             <div>
               <div>
                 <h2>
-                  Account Balance: ${" "}
+                  Balance: ${""}
                   {JSON.parse(localStorage.getItem("currentUser")).balance}
                 </h2>
 
                 <form onSubmit={handleWithdraw}>
                   <label className="label huge">
-                    <h3>Withdraw Amount</h3> <br />
-                    <input
-                      type="number"
-                      value={withdrawAmount}
-                      onChange={handleInputChange}
-                    />
+                    Withdraw Amount <br />
                   </label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={withdrawAmount}
+                    onChange={handleInputChange}
+                  />
                   <br />
-                  <button type="submit">Withdraw</button>
+                  <button className="btn btn-light" type="submit">
+                    Withdraw
+                  </button>
                 </form>
                 {success && <p>Success!</p>}
                 {errorMessage && <p>{errorMessage}</p>}

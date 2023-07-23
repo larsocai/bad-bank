@@ -11,7 +11,7 @@ function Home() {
       <div
         className="image-row"
         style={{
-          backgroundImage: "url(./fabrice-villard-k87jn9fnYdY-unsplash.jpg)",
+          backgroundImage: "url(./nothingbank0.jpg)",
         }}
       >
         <div className="image-title">Welcome to Nothing Bank</div>
@@ -35,7 +35,7 @@ function Home() {
               <img src={creditCard} className="img-fluid" alt="bank card" />
             }
             title="No Security"
-            text="At Nothing Bank, we take a unique approach by eliminating security measures, ensuring quick and efficient access to your funds. By removing security protocols, we offer unparalleled convenience, saving you time and effort. Say goodbye to passwords, PINs, and other security protocols."
+            text="We take a unique approach by eliminating security measures, ensuring quick and efficient access to your funds. By removing security protocols, we offer unparalleled convenience, saving you time and effort. Say goodbye to multi-step passwords, PINs, and other security protocols."
             // body={<img src={bankImg} className="img-fluid" alt="bank logo" />}
           />
         </div>

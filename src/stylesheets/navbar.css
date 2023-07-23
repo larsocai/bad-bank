@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ysabeau+SC:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap');
 
 .navbar-brand {
     font-family: 'Monoton', cursive;
@@ -8,18 +9,20 @@
 }
 
 .navbar-expand-lg .navbar-nav {
-    padding-left: 75%;
+    padding-left: 73%;
 }
 
 .nav-link:hover {
-    color: blue;
+    color: seagreen;
 }
 
 .active {
-    color: blue !important;
+    color: seagreen !important;
 }
 
 .nav-link {
     cursor: default;
+    font-family: 'Ysabeau SC', sans-serif;
+    font-weight: 600;
 }
 

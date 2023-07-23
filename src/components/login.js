@@ -63,6 +63,7 @@ const LoginForm = () => {
                     <input
                       type="text"
                       value={username}
+                      className="form-control"
                       onChange={handleUsernameChange}
                     />
                   </label>
@@ -72,11 +73,16 @@ const LoginForm = () => {
                     <input
                       type="password"
                       value={password}
+                      className="form-control"
                       onChange={handlePasswordChange}
                     />
                   </label>
                   <br />
-                  <input className="enter" type="submit" value="Log In" />
+                  <input
+                    className="btn btn-light"
+                    type="submit"
+                    value="Login"
+                  />
                 </form>
                 {success && <p>Successfully logged in!</p>}
                 {failed && <p>Incorrect Login or Password</p>}

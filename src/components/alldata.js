@@ -13,28 +13,26 @@ function AllData() {
           backgroundImage: "url(./nothingbank5.jpg)",
         }}
       >
-        <div>
-          <div className="card-layout">
-            {users.map((user) => {
-              const { username } = user;
-              return (
-                <Card
-                  txtcolor="black"
-                  header={username}
-                  title="No security, no service, no hassel."
-                  text="Keep track of your information."
-                  body={
-                    <div key={username}>
-                      <h3>Email: {user.email}</h3>
-                      <h3>Password: {user.password}</h3>
-                      <h3>Balance: ${user.balance}</h3>
-                      &nbsp;
-                    </div>
-                  }
-                ></Card>
-              );
-            })}
-          </div>
+        <div className="card-layout">
+          {users.map((user) => {
+            const { username } = user;
+            return (
+              <Card
+                txtcolor="black"
+                header={username}
+                // title="Keep track of your information."
+                text="If this information isn't yours, please ignore it."
+                body={
+                  <div key={username}>
+                    <h3>Email: {user.email}</h3>
+                    <h3>Password: {user.password}</h3>
+                    <h3>Balance: ${user.balance}</h3>
+                    &nbsp;
+                  </div>
+                }
+              ></Card>
+            );
+          })}
         </div>
       </div>
     </>
