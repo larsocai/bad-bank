@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import Card from "./Card";
+import "../App.css";
 
 const Withdraw = () => {
   const [withdrawAmount, setWithdrawAmount] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleWithdraw = (event) => {
     event.preventDefault();
-    if (withdrawAmount <= 0) {
+    if (
+      withdrawAmount <= 0 ||
+      !withdrawAmount ||
+      typeof withdrawAmount !== "number"
+    ) {
       setErrorMessage("Invalid amount. Please enter a positive value.");
       return;
     }
@@ -27,6 +34,7 @@ const Withdraw = () => {
     const updatedUsers = users.map((user) => {
       if (user.username === currentUser.username) {
         user.balance = newTotal;
+        setSuccess(true);
       }
       return user;
     });
@@ -41,25 +49,45 @@ const Withdraw = () => {
   };
 
   return (
-    <div>
-      <h2>
-        Account Balance: ${" "}
-        {JSON.parse(localStorage.getItem("currentUser")).balance}
-      </h2>
+    <div
+      className="secondary-image-row"
+      style={{
+        backgroundImage: "url(./nothingbank2.jpg)",
+      }}
+    >
+      <div>
+        <Card
+          txtcolor="black"
+          header="Withdrawal"
+          title="No security, no service, no hassel."
+          text="Sign in to manage your account."
+          body={
+            <div>
+              <div>
+                <h2>
+                  Account Balance: ${" "}
+                  {JSON.parse(localStorage.getItem("currentUser")).balance}
+                </h2>
 
-      <form onSubmit={handleWithdraw}>
-        <label>
-          Withdraw Amount:
-          <input
-            type="number"
-            value={withdrawAmount}
-            onChange={handleInputChange}
-          />
-        </label>
-        <button type="submit">Withdraw</button>
-      </form>
-
-      {errorMessage && <p>{errorMessage}</p>}
+                <form onSubmit={handleWithdraw}>
+                  <label className="label huge">
+                    <h3>Withdraw Amount</h3> <br />
+                    <input
+                      type="number"
+                      value={withdrawAmount}
+                      onChange={handleInputChange}
+                    />
+                  </label>
+                  <br />
+                  <button type="submit">Withdraw</button>
+                </form>
+                {success && <p>Success!</p>}
+                {errorMessage && <p>{errorMessage}</p>}
+              </div>
+            </div>
+          }
+        ></Card>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
+import Card from "./Card";
+import "../stylesheets/Loginpage.css";
+import "../App.css";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -39,27 +42,50 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={handleUsernameChange} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </label>
-        <br />
-        <input type="submit" value="Log In" />
-      </form>
-      {success && <p>Successfully logged in!</p>}
-      {failed && <p>Incorrect Login or Password</p>}
-    </div>
+    <>
+      <div
+        className="secondary-image-row"
+        style={{
+          backgroundImage: "url(./nothingbank3.jpg)",
+        }}
+      >
+        <div>
+          <Card
+            txtcolor="black"
+            header="Login"
+            title="No security, no service, no hassel."
+            text="Sign in to manage your account."
+            body={
+              <div>
+                <form onSubmit={handleSubmit}>
+                  <label className="label">
+                    Username <br />
+                    <input
+                      type="text"
+                      value={username}
+                      onChange={handleUsernameChange}
+                    />
+                  </label>
+                  <br />
+                  <label className="label">
+                    Password <br />
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={handlePasswordChange}
+                    />
+                  </label>
+                  <br />
+                  <input className="enter" type="submit" value="Log In" />
+                </form>
+                {success && <p>Successfully logged in!</p>}
+                {failed && <p>Incorrect Login or Password</p>}
+              </div>
+            }
+          ></Card>
+        </div>
+      </div>
+    </>
   );
 };
 

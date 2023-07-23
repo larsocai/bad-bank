@@ -7,10 +7,10 @@ import Deposit from "./components/Deposit";
 import Withdraw from "./components/Withdraw";
 import Balance from "./components/Balance";
 import AllData from "./components/AllData";
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 
 // Create UserContext
-export const UserContext = React.createContext({
+export const UserContext = createContext({
   balance: 0,
   setBalance: () => {},
   users: [],

@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import Card from "./Card";
+import "../App.css";
 
 function CreateAccount() {
   const [show, setShow] = React.useState(true);
@@ -51,63 +52,76 @@ function CreateAccount() {
   }
 
   return (
-    <Card
-      bgcolor="primary"
-      header="Create Account"
-      status={status}
-      body={
-        show ? (
-          <>
-            Username
-            <br />
-            <input
-              type="input"
-              className="form-control"
-              id="name"
-              placeholder="Enter username"
-              value={username}
-              onChange={(e) => setUserName(e.currentTarget.value)}
-            />
-            <br />
-            Email
-            <br />
-            <input
-              type="input"
-              className="form-control"
-              id="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={(e) => setEmail(e.currentTarget.value)}
-            />
-            <br />
-            Password
-            <br />
-            <input
-              type="input"
-              className="form-control"
-              id="password"
-              placeholder="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.currentTarget.value)}
-            />
-            <br />
-            <button
-              type="submit"
-              className="btn btn-light"
-              onClick={handleCreate}
-            >
-              Create Account
-            </button>
-          </>
-        ) : (
-          <>
-            <button type="submit" className="btn btn-light" onClick={clearForm}>
-              Add another account
-            </button>
-          </>
-        )
-      }
-    />
+    <div
+      className="secondary-image-row"
+      style={{
+        backgroundImage: "url(./nothingbank1.jpg)",
+      }}
+    >
+      <div>
+        <Card
+          bgcolor="primary"
+          header="Create Account"
+          status={status}
+          body={
+            show ? (
+              <>
+                Username
+                <br />
+                <input
+                  type="input"
+                  className="form-control"
+                  id="name"
+                  placeholder="Enter username"
+                  value={username}
+                  onChange={(e) => setUserName(e.currentTarget.value)}
+                />
+                <br />
+                Email
+                <br />
+                <input
+                  type="input"
+                  className="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  value={email}
+                  onChange={(e) => setEmail(e.currentTarget.value)}
+                />
+                <br />
+                Password
+                <br />
+                <input
+                  type="input"
+                  className="form-control"
+                  id="password"
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={(e) => setPassword(e.currentTarget.value)}
+                />
+                <br />
+                <button
+                  type="submit"
+                  className="btn btn-light"
+                  onClick={handleCreate}
+                >
+                  Create Account
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  type="submit"
+                  className="btn btn-light"
+                  onClick={clearForm}
+                >
+                  Add another account
+                </button>
+              </>
+            )
+          }
+        />
+      </div>
+    </div>
   );
 }
 

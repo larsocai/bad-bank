@@ -1,14 +1,24 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "../stylesheets/navbar.css";
 
 function NavBar() {
+  const [active, setActive] = useState("/");
+  const navigate = useNavigate();
+
+  const handleNavigate = (url) => {
+    navigate(url, { replace: true });
+    setActive(url);
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            BadBank
-          </a>
+          <div className="navbar-brand" onClick={() => handleNavigate("/")}>
+            NB
+          </div>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,32 +33,57 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="/createaccount/">
+                <div
+                  className={
+                    active === "/createaccount" ? "nav-link active" : "nav-link"
+                  }
+                  onClick={() => handleNavigate("/createaccount")}
+                >
                   Create Account
-                </a>
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/login/">
+                <div
+                  className={
+                    active === "/login" ? "nav-link active" : "nav-link"
+                  }
+                  onClick={() => handleNavigate("/login")}
+                >
                   Login
-                </a>
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/deposit/">
+                <div
+                  className={
+                    active === "/deposit" ? "nav-link active" : "nav-link"
+                  }
+                  onClick={() => handleNavigate("/deposit")}
+                >
                   Deposit
-                </a>
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/withdraw/">
+                <div
+                  className={
+                    active === "/withdraw" ? "nav-link active" : "nav-link"
+                  }
+                  onClick={() => handleNavigate("/withdraw")}
+                >
                   Withdraw
-                </a>
+                </div>
               </li>
               {/* <li className="nav-item">
                             <a className="nav-link" href="/balance/">Balance</a>
                         </li> */}
               <li className="nav-item">
-                <a className="nav-link" href="/alldata/">
+                <div
+                  className={
+                    active === "/alldata" ? "nav-link active" : "nav-link"
+                  }
+                  onClick={() => handleNavigate("/alldata")}
+                >
                   All Data
-                </a>
+                </div>
               </li>
             </ul>
           </div>

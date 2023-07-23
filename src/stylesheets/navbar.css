@@ -1,3 +1,25 @@
-.active {
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+.navbar-brand {
+    font-family: 'Monoton', cursive;
+    font-size: 50px;
+    padding-left: 2%;
+    cursor: default;
 }
+
+.navbar-expand-lg .navbar-nav {
+    padding-left: 75%;
+}
+
+.nav-link:hover {
+    color: blue;
+}
+
+.active {
+    color: blue !important;
+}
+
+.nav-link {
+    cursor: default;
+}
+

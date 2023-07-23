@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import Card from "./Card";
+import "../App.css";
 
 const Deposit = () => {
   const [deposit, setDeposit] = useState(0);
   const [validTransaction, setValidTransaction] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (event) => {
     const amount = Number(event.target.value);
@@ -26,6 +29,7 @@ const Deposit = () => {
     const updatedUsers = users.map((user) => {
       if (user.username === currentUser.username) {
         user.balance = newTotal;
+        setSuccess(true);
       }
       return user;
     });
@@ -40,27 +44,50 @@ const Deposit = () => {
   } `;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2 id="total">{status}</h2>
-      <label className="label huge">
-        <h3>Deposit</h3>
-        <input
-          id="number-input"
-          type="number"
-          width="200"
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <input
-          type="submit"
-          disabled={!validTransaction}
-          width="200"
-          value="Confirm"
-          id="submit-input"
-        />
-      </label>
-    </form>
+    <>
+      <div
+        className="secondary-image-row"
+        style={{
+          backgroundImage: "url(./nothingbank4.jpg)",
+        }}
+      >
+        <div>
+          <Card
+            txtcolor="black"
+            header="Deposit"
+            title="No security, no service, no hassel."
+            text="Sign in to manage your account."
+            body={
+              <div>
+                <form onSubmit={handleSubmit}>
+                  <h2 id="total">{status}</h2>
+                  <label className="label huge">
+                    <h3>Deposit</h3>
+                    <input
+                      value={deposit}
+                      id="number-input"
+                      type="number"
+                      width="200"
+                      onChange={handleChange}
+                    />
+                    <br />
+                    <br />
+                    <input
+                      type="submit"
+                      disabled={!validTransaction}
+                      width="200"
+                      value="Confirm"
+                      id="submit-input"
+                    />
+                  </label>
+                </form>
+                {success && <p>Success!</p>}
+              </div>
+            }
+          ></Card>
+        </div>
+      </div>
+    </>
   );
 };
 

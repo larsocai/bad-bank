@@ -1,17 +1,27 @@
 .card-container {
     display: flex;
-    margin: 25px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {   
+    box-shadow: 0px 0px 5px #959fa8;
+    border: none !important;
+    background-color: rgb(255, 255, 255, 0.8);
 }
 
 .card-header {
     background-color: lightblue;
-    border: 3px solid black;
-    border-bottom: none;
+    border-bottom: 1px solid #959fa8;
+    
     text-align: center;
 }
 
 .card-body {
-    border: 3px solid black;
+    
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
