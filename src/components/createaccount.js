@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import "../App.css";
 
@@ -8,10 +8,11 @@ function CreateAccount() {
   const [username, setUserName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [users, setUsers] = useState([]);
 
   function validate(field, label) {
     if (!field) {
-      setStatus("Error: " + label);
+      setStatus("Please create " + label);
       setTimeout(() => setStatus(""), 3000);
       return false;
     }
@@ -19,13 +20,10 @@ function CreateAccount() {
   }
 
   function handleCreate() {
-    let users = JSON.parse(localStorage.getItem("users"));
-
     // If no users item in localStorage, initialize as an empty array
-    if (!users) users = [];
 
     if (
-      !validate(username, "name") ||
+      !validate(username, "username") ||
       !validate(email, "email") ||
       !validate(password, "password")
     ) {
@@ -39,8 +37,8 @@ function CreateAccount() {
       balance: 0,
     };
 
-    users.push(userInfo);
-    localStorage.setItem("users", JSON.stringify(users));
+    setUsers([...users, userInfo]);
+    localStorage.setItem("users", JSON.stringify([...users, userInfo]));
     setShow(false);
   }
 
@@ -50,6 +48,11 @@ function CreateAccount() {
     setPassword("");
     setShow(true);
   }
+
+  useEffect(() => {
+    const storedUsers = JSON.parse(localStorage.getItem("users"));
+    setUsers(storedUsers ? storedUsers : []);
+  }, []);
 
   return (
     <div
