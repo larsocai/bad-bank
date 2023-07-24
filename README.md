@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Nothing Bank 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Description
 
-## Available Scripts
+This banking app is built using React, React Router, Bootstrap, CSS, and AWS. The site offers basic functionality for users to create an account, login, and deposit/withdraw money. It is a conceptual model and does not represent a real banking app. 
 
-In the project directory, you can run:
+### Features
 
-### `npm start`
+<ul>
+  <li>Home: The home page serves as the landing page for the application. It provides essential information and navigation options to guide users to various sections of the app.</li>
+  <li>Create Account: This option allows users to register for an account on the platform. Users typically need to provide their personal details, such as name, email, and password, to create an account.</li>
+  <li>Login: The login page enables users who have already registered to access their account. Users will typically enter their credentials (username and password) to log in and gain access to their account.</li>
+  <li>Deposit: The deposit functionality allows users to add funds or money to their account. </li>
+  <li>Withdraw: The withdraw feature allows users to take money out of their account.</li>
+  <li>AllData: This section refers to a comprehensive view of all account activity and data.</li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation and Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To use this bank application, please visit http://seelarso-nothingbankapp.s3-website-us-west-2.amazonaws.com/
 
-### `npm test`
+or
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+follow these steps:
 
-### `npm run build`
+  <ul>
+    <li>Clone the repository or download the code files.</li>
+    <li>Navigate to the project directory in your terminal.</li>
+    <li>Install the necessary dependencies by running the following command: npm install</li>
+    <li>Run the React server in your browser with the command: npm start</li>
+  </ul>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### AWS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Amazon S3 (Simple Storage Service): Object storage service for secure and scalable storage of data, images, and backups.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Creating an AWS Account
 
-### `npm run eject`
+To use AWS, you need to create an AWS account. If you don't have one yet, follow these steps:
+<ul>
+    <li>Visit the AWS website: https://aws.amazon.com/</li>
+    <li>Click on the "Create an AWS Account" button.</li>
+    <li>Follow the registration process, providing necessary information such as email, password, and payment details.</li>
+    <li>AWS may require phone verification as an additional security measure.</li>
+    <li>Once your account is created, you can sign in to the AWS Management Console.</li>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### AWS Management Console
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The AWS Management Console is a web-based interface that allows you to access and manage your AWS resources. After signing in to your AWS account, you can use the console to create and configure various services, monitor your resource usage, and manage billing and security settings.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The project relies on the following dependencies: React, Bootstrap, React Router, and AWS.
 
-## Learn More
+### Roadmap of Future Improvement
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Future improvements for the application include adding navigation functionality to the deposit and withdraw pages to access the other within the card.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### License Info
 
-### Code Splitting
+MIT
+Copyright (c) 2023 Caitlyn Larson
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-### Analyzing the Bundle Size
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### Making a Progressive Web App
+### Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
