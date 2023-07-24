@@ -16,7 +16,11 @@ function NavBar() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <div className="navbar-brand" onClick={() => handleNavigate("/")}>
+          <div
+            className="navbar-brand"
+            onClick={() => handleNavigate("/")}
+            title="Home"
+          >
             NB
           </div>
           <button
@@ -38,6 +42,7 @@ function NavBar() {
                     active === "/createaccount" ? "nav-link active" : "nav-link"
                   }
                   onClick={() => handleNavigate("/createaccount")}
+                  title="Create a new account"
                 >
                   Create Account
                 </div>
@@ -48,6 +53,7 @@ function NavBar() {
                     active === "/login" ? "nav-link active" : "nav-link"
                   }
                   onClick={() => handleNavigate("/login")}
+                  title="Login to your account"
                 >
                   Login
                 </div>
@@ -58,6 +64,7 @@ function NavBar() {
                     active === "/deposit" ? "nav-link active" : "nav-link"
                   }
                   onClick={() => handleNavigate("/deposit")}
+                  title="Deposit money"
                 >
                   Deposit
                 </div>
@@ -68,6 +75,7 @@ function NavBar() {
                     active === "/withdraw" ? "nav-link active" : "nav-link"
                   }
                   onClick={() => handleNavigate("/withdraw")}
+                  title="Withdraw money"
                 >
                   Withdraw
                 </div>
@@ -81,6 +89,7 @@ function NavBar() {
                     active === "/alldata" ? "nav-link active" : "nav-link"
                   }
                   onClick={() => handleNavigate("/alldata")}
+                  title="Find your data"
                 >
                   All Data
                 </div>
