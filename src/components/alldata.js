@@ -5,10 +5,19 @@ import "../App.css";
 
 function AllData() {
   const [users, setUsers] = useState([]);
+  const [usersExist, setUsersExist] = useState(false);
 
   useEffect(() => {
     setUsers(JSON.parse(localStorage.getItem("users")));
   }, []);
+  useEffect(() => {
+    if (users && users.length > 0) {
+      setUsersExist(true);
+    } else {
+      setUsersExist(false);
+    }
+  }, [users]);
+
   return (
     <>
       <div
@@ -17,7 +26,7 @@ function AllData() {
           backgroundImage: "url(./nothingbank5.jpg)",
         }}
       >
-        {users.length > 0 && (
+        {usersExist && (
           <div className="card-layout">
             {users.map((user, index) => {
               const { username } = user;
